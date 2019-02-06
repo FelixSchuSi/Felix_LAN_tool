@@ -1,0 +1,1 @@
+Eine einfache Möglichkeit Daten auf einer LAN-Party zu übertragen, realisiert mit einem lokalen NodeJS Server. Server kann von anderen Rechnern auf *deineLokaleIp*:3000 aufgerufen werden. Eventuell müssen Anpassungen an den Firewalleinstellungen vorgenommen werden, damit andere Rechner die Seite aufrufen können.
