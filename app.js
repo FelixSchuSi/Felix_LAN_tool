@@ -18,20 +18,21 @@ app.use(express.static(__dirname + '/public'));
 // ALTERNATIVE 1: NUR ZIPs UND 7zip INSTALLATION BEREITSTELLEN
 let files = [];
 
-// fs.readdir(path.join(__dirname, ".."), "utf-8", (err, items) => {
-//     console.table(items);
-//     filtered = items.filter(elem => (elem === "7zipSetup.exe" || elem.endsWith('.zip')));
-//     filtered.forEach(element => {
-//         files.push({ name: element, dir: path.join(__dirname, "..", element) })
-//     });
-// })
-
-// ALTERNATIVE 2: ALLE DATEIEN UND ORDNER BEREITSTELLEN
 fs.readdir(path.join(__dirname, ".."), "utf-8", (err, items) => {
-    items.forEach(element => {
+    console.table(items);
+    filtered = items.filter(elem => (elem === "7zipSetup.exe" || elem.endsWith('.zip')));
+    filtered.forEach(element => {
         files.push({ name: element, dir: path.join(__dirname, "..", element) })
     });
 })
+
+// ACHTUNG!!! Alternative 2 funktioniert (noch) nicht.
+// ALTERNATIVE 2: ALLE DATEIEN UND ORDNER BEREITSTELLEN
+// fs.readdir(path.join(__dirname, ".."), "utf-8", (err, items) => {
+//     items.forEach(element => {
+//         files.push({ name: element, dir: path.join(__dirname, "..", element) })
+//     });
+// })
 
 
 app.get('/', (req, res) => {
