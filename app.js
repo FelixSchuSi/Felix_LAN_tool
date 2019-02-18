@@ -14,10 +14,8 @@ app.engine('hbs', exphbs(engineConfig));
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
 
-//DATEN WERDEN BEREITGESTELLT, zwei Alternativen wählbar. Eine muss auskommentiert werden
-// ALTERNATIVE 1: NUR ZIPs UND 7zip INSTALLATION BEREITSTELLEN
+//reading relevant Zip-files
 let files = [];
-
 fs.readdir(path.join(__dirname, ".."), "utf-8", (err, items) => {
     console.table(items);
     filtered = items.filter(elem => (elem === "7zipSetup.exe" || elem.endsWith('.zip')));
@@ -26,19 +24,12 @@ fs.readdir(path.join(__dirname, ".."), "utf-8", (err, items) => {
     });
 })
 
-// ACHTUNG!!! Alternative 2 funktioniert (noch) nicht.
-// ALTERNATIVE 2: ALLE DATEIEN UND ORDNER BEREITSTELLEN
-// fs.readdir(path.join(__dirname, ".."), "utf-8", (err, items) => {
-//     items.forEach(element => {
-//         files.push({ name: element, dir: path.join(__dirname, "..", element) })
-//     });
-// })
-
-
+// rendering standard view
 app.get('/', (req, res) => {
     res.render('index', { files: files });
 });
 
+// Download handler
 app.post('/dl/:name', (req, res) => {
     let file = req.params.name;
     files.forEach(e => {
@@ -48,6 +39,7 @@ app.post('/dl/:name', (req, res) => {
     })
     res.download(file);
 });
+
 app.listen(3000, () => {
     console.log('listening on port 3000!');
 });

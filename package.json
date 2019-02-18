@@ -4,7 +4,8 @@
   "description": "Eine einfache Möglichkeit Daten auf einer LAN-Party zu übertragen, realisiert mit einem lokalen NodeJS Server. Server kann von anderen Rechnern auf Port 3000 aufgerufen werden. Eventuell müssen Anpassungen an den Firewalleinstellungen vorgenommen werden, damit andere Rechner die Seite aufrufen können.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/FelixSchuSi/Felix_LAN_tool#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "express-handlebars": "^3.0.0"
+    "express-handlebars": "^3.0.0",
+    "path": "10.12.7"
   }
 }

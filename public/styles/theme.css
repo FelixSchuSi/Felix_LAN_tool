@@ -2,13 +2,6 @@ body, main {
     padding-top: 2.5rem;
   }
   
-li {
-    /* display: grid;
-    grid:
-    "nm dl" 2em
-    /1fr 3em;
-    grid-gap: 1em; */
-}
 .nameElem{
     display: inline-flex;
     flex-shrink: 0;
@@ -16,9 +9,6 @@ li {
     height: 2rem;
     justify-content: left;
     align-items: center;
-    /* top: 50%;
-    float: left;
-    vertical-align: -100%; */
 }
 .btnElem{
     display: inline-flex;

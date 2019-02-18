@@ -6,7 +6,7 @@
 * zum Bereitstellen muss VORERST der Server neu gestartet werden
 * Ordner für Uploads
 * Uploads von der Server Konsole abbrechen???
-  * Ist das möglich?
+  * möglich?
 
 ## ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `UNWICHTIG!` Statusseite
 
@@ -15,7 +15,7 @@
  * Anzahl an Verbindungen
  * evtl Graphen mit Verlauf der Übertragungsraten
  * Clients mit Priorität setzen?
-   * Ist das möglich?
+   * möglich?
 
 ## ![#008000](https://placehold.it/15/008000/000000?text=+) `WICHTIG!` bitTourrent Ansatz entwickelt 
 
