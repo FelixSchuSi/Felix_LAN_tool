@@ -12,17 +12,28 @@ const engineConfig = {
 }
 app.engine('hbs', exphbs(engineConfig));
 app.set('view engine', 'hbs');
-app.use(express.static(__dirname + '/public'));
+app.set('views', path.join(__dirname, '/views'));
+app.use(express.static(path.join(__dirname + '/public')));
 
-//reading relevant Zip-files
+//reading relevant Zip-files + 7ZipSetup
+
 let files = [];
-fs.readdir(path.join(__dirname, ".."), "utf-8", (err, items) => {
+
+fs.readdir(path.join(__dirname, "..", "files-to-be-transfered"), "utf-8", (err, items) => {
     console.table(items);
-    filtered = items.filter(elem => (elem === "7zipSetup.exe" || elem.endsWith('.zip')));
+    filtered = items.filter(elem => (elem.endsWith('.torrent') || elem.endsWith('.zip')));
+    filtered.forEach(element => {
+        files.push({ name: element, dir: path.join(__dirname, "..", "files-to-be-transfered", element) })
+    });
+})
+fs.readdir(path.join(__dirname), "utf-8", (err, items) => {
+    console.table(items);
+    filtered = items.filter(elem => (elem === "7zipSetup.exe"));
     filtered.forEach(element => {
         files.push({ name: element, dir: path.join(__dirname, "..", element) })
     });
 })
+
 
 // rendering standard view
 app.get('/', (req, res) => {
@@ -33,7 +44,7 @@ app.get('/', (req, res) => {
 app.post('/dl/:name', (req, res) => {
     let file = req.params.name;
     files.forEach(e => {
-        if(e.name === file){
+        if (e.name === file) {
             file = e.dir;
         }
     })
