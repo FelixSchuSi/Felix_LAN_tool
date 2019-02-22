@@ -26,11 +26,11 @@ fs.readdir(path.join(__dirname, "..", "files-to-be-transfered"), "utf-8", (err, 
         files.push({ name: element, dir: path.join(__dirname, "..", "files-to-be-transfered", element), symbol: "fas fa-file zip smblElem" })
     });
 })
-fs.readdir(path.join(__dirname), "utf-8", (err, items) => {
+fs.readdir(path.join(__dirname, "..", "source-code"), "utf-8", (err, items) => {
     console.table(items);
     filtered = items.filter(elem => (elem === "7zipSetup.exe"));
     filtered.forEach(element => {
-        files.push({ name: element, dir: path.join(__dirname, "..", element), symbol: "fas fa-file-archive 7zip smblElem" })
+        files.push({ name: element, dir: path.join(__dirname, "..", "source-code", element), symbol: "fas fa-file-archive 7zip smblElem" })
     });
 })
 
