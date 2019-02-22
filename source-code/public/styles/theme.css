@@ -1,7 +1,7 @@
-body, main {
+ body, main {
     padding-top: 2.5rem;
   }
-  
+ 
 .nameElem{
     display: inline-flex;
     flex-shrink: 0;
@@ -19,5 +19,5 @@ body, main {
     align-items: center;
     float: right;
     margin-right: 1rem;
-}
+} 
 

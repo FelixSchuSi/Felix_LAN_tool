@@ -1,13 +1,14 @@
 {{#if files}}
 <ul class="list-group mt-3">
     {{#each files}}
-    <li class="flex-nowrap list-group-item list-group-item-action" >
+    <li class="flex-nowrap list-group-item list-group-item-action">
+        {{!-- <span class="{{this.symbol}}"/> --}}
         <span class="nameElem">{{this.name}}</span>
         <span class="btnElem">
             <form action="/dl/{{this.name}}" method="POST">
                 <button class="btn btn-outline-dark">Download</button>
             </form>
-        </span> 
+        </span>
         {{!-- <span class="nameElem">links</span>
         <span class="btnElem">rechts</span> --}}
 
