@@ -5,17 +5,12 @@ You can access the interface in your browser by using the local IP address of th
 This tool runs on Port 3000 by default. For best performance I reccomend to set up a reverse proxy e.g. nginx, apache.
 
 ## run
-`git clone https://github.com/FelixSchuSi/Felix_LAN_tool.git`
-
-`cd Felix_LAN_tool`
-
-`npm i`
-
-Place your data in the 'files-to-be-transfered' directory.
-
-`npm run`
-
-access web interface over local ip address:port
+1. `git clone https://github.com/FelixSchuSi/Felix_LAN_tool.git`
+2. `cd Felix_LAN_tool`
+3. `npm i`
+4. Place your data in the 'files-to-be-transfered' directory.
+5. `npm run`
+6. access web interface over local ip address:port
 
 ## determine local IP address
 The local ip address of your machine can be identified with `ipconfig` on Windows and `ifconfig` on Linux/Mac.
