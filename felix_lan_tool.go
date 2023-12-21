@@ -178,7 +178,7 @@ func bootstrap_handler(w http.ResponseWriter, r *http.Request, bootstrap_content
 
 func print_local_ip_addresses() {
 	addrs, _ := net.InterfaceAddrs()
-	println("running on:")
+	println("Running on:")
 	for _, address := range addrs {
 		if ipnet, ok := address.(*net.IPNet); ok && !ipnet.IP.IsLoopback() {
 			if ipnet.IP.To4() != nil && ipnet.IP.IsPrivate() == true {
@@ -196,6 +196,9 @@ func main() {
 
 	http.Handle("/download/", http.StripPrefix("/download/", setHeadersForDownload(fs)))
 	http.HandleFunc("/upload", upload_handler)
+
+	println("felix_lan_tool started!\n")
+	println("Report issues here: https://github.com/FelixSchuSi/Felix_LAN_tool\n")
 
 	print_local_ip_addresses()
 
