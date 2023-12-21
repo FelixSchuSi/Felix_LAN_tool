@@ -19,7 +19,7 @@
   "homepage": "https://github.com/FelixSchuSi/Felix_LAN_tool#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "express-handlebars": "^3.0.0"
+    "express-handlebars": "^5.3.1"
   },
   "devDependencies": {
     "@types/express": "^4.16.0",
